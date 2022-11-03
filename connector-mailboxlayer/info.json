@@ -1,0 +1,80 @@
+{
+    "name": "mailboxlayer",
+    "version": "1.0.0",
+    "label": "Mailboxlayer",
+    "description": "Mailboxlayer simple and powerful API offering instant email address validation & verification via syntax checks, typo and spelling checks, SMTP checks, free and disposable provider filtering.This connector facilitates the automated operations email verification and check email validation.",
+    "publisher": "spryIQ.co",
+    "icon_small_name": "mailboxlayer_32x32.png",
+    "icon_large_name": "mailboxlayer_80x80.png",
+    "cs_compatible": true,
+    "cs_approved": false,
+    "category": "Email Security",
+    "help_online": "https://github.com/jitesh-spryiq/connector-mailboxlayer/blob/develop/docs/MailBoxLayerConnectorDoc.md",
+    "configuration": {
+        "fields": [
+            {
+                "title": "Server URL",
+                "type": "text",
+                "description": "URL of the Threat Intelligence Platform connector to access the connector website.",
+                "tooltip": "URL of the Threat Intelligence Platform connector to access the connector website.",
+                "name": "server",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "",
+                "placeholder": "e.g: https://api.apilayer.com or api.apilayer.com"
+            },
+            {
+                "title": "API key",
+                "type": "password",
+                "description": "Provide API token, used for user authentication.",
+                "tooltip": "Provide API token, used for user authentication.",
+                "name": "api_key",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "",
+                "placeholder": "e.g:yMlmghnnE9CApiAwLNHJFlN0VofZVnUnaaaHT"
+            }
+        ]
+    },
+    "operations": [
+        {
+            "title": "Get Email Verification Detail",
+            "operation": "get_email_verification_details",
+            "description": "Retrieved data for the given email address.",
+            "annotation": "email_verification_details",
+            "category": "investigation",
+            "output_schema": [
+                {
+                    "email": "",
+                    "did_you_mean": "",
+                    "user": "",
+                    "domain": "",
+                    "format_valid": "",
+                    "mx_found": "",
+                    "smtp_check": "",
+                    "catch_all": "",
+                    "role": "",
+                    "disposable": "",
+                    "free": "",
+                    "score":""
+                }
+            ],
+            "parameters": [
+                {
+                    "title": "Email Address",
+                    "type": "text",
+                    "name": "email_address",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g:support@apilayer.com",
+                    "description": "Required email address whose email Validates data needs to be retrieved.",
+                    "tooltip": "Required email address whose email Validates data needs to be retrieved."
+                }
+            ]
+        }
+    ]
+}
