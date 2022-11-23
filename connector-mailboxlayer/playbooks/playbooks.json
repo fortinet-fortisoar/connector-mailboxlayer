@@ -1,0 +1,99 @@
+{
+    "type": "workflow_collections",
+    "data": [
+        {
+            "uuid": "6bcdce77-87c7-4db1-8224-5e2010d42408",
+            "@type": "WorkflowCollection",
+            "name": "Sample - Mailboxlayer - 1.0.0",
+            "description": "Mailboxlayer simple and powerful API offering instant email address validation & verification via syntax checks, typo and spelling checks, SMTP checks, free and disposable provider filtering.This connector facilitates the automated operations email verification and check email validation.",
+            "visible": true,
+            "image": null,
+            "recordTags": [
+                "mailboxlayer"
+            ],
+            "workflows": [
+                {
+                    "@type": "Workflow",
+                    "uuid": "ac69c83d-4e9a-4e8d-9958-3d197da1cfaf",
+                    "collection": "/api/3/workflow_collections/6bcdce77-87c7-4db1-8224-5e2010d42408",
+                    "triggerLimit": null,
+                    "description": "Retrieved data for the given email address.",
+                    "name": "Get Email Verification Detail",
+                    "tag": "#Mailboxlayer",
+                    "recordTags": [
+                        "mailboxlayer"
+                    ],
+                    "isActive": false,
+                    "debug": false,
+                    "singleRecordExecution": false,
+                    "parameters": [],
+                    "synchronous": false,
+                    "triggerStep": "/api/3/workflow_steps/2e044910-b92a-42eb-9748-5148486f8a47",
+                    "steps": [
+                        {
+                            "uuid": "2e044910-b92a-42eb-9748-5148486f8a47",
+                            "@type": "WorkflowStep",
+                            "name": "Start",
+                            "description": null,
+                            "status": null,
+                            "arguments": {
+                                "route": "5ff5549a-9acf-4097-a262-7a622b2614f4",
+                                "title": "Mailboxlayer: Get Email Verification Detail",
+                                "resources": [
+                                    "alerts"
+                                ],
+                                "inputVariables": [],
+                                "step_variables": {
+                                    "input": {
+                                        "records": "{{vars.input.records[0]}}"
+                                    }
+                                },
+                                "singleRecordExecution": false,
+                                "noRecordExecution": true,
+                                "executeButtonText": "Execute"
+                            },
+                            "left": "20",
+                            "top": "20",
+                            "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+                        },
+                        {
+                            "uuid": "874a4f84-201d-41d3-be99-3457b1198524",
+                            "@type": "WorkflowStep",
+                            "name": "Get Email Verification Detail",
+                            "description": null,
+                            "status": null,
+                            "arguments": {
+                                "name": "Mailboxlayer",
+                                "config": "''",
+                                "params": {
+                                    "email_address": ""
+                                },
+                                "version": "1.0.0",
+                                "connector": "mailboxlayer",
+                                "operation": "get_email_verification_details",
+                                "operationTitle": "Get Email Verification Detail",
+                                "step_variables": {
+                                    "output_data": "{{vars.result}}"
+                                }
+                            },
+                            "left": "188",
+                            "top": "120",
+                            "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+                        }
+                    ],
+                    "routes": [
+                        {
+                            "@type": "WorkflowRoute",
+                            "uuid": "9d627882-38ad-4ff9-994d-ca44e1c5573b",
+                            "label": null,
+                            "isExecuted": false,
+                            "name": "Start-> Get Email Verification Detail",
+                            "sourceStep": "/api/3/workflow_steps/2e044910-b92a-42eb-9748-5148486f8a47",
+                            "targetStep": "/api/3/workflow_steps/874a4f84-201d-41d3-be99-3457b1198524"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
